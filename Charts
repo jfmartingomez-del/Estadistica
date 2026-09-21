@@ -1,0 +1,2 @@
+bar_chart <- barplot(values, names.arg= names(values), main= "Bar plot") ; bar_chart
+pie_chart <- pie(matr, label= sec, col= rainbow(length(sec))) ; pie_chart
