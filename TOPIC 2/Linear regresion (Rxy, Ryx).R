@@ -1,7 +1,7 @@
 # Enter the values x and y
 
-X <- c(155, 165, 175, 185, 195)
-Y <- c(55, 65, 75, 85, 95, 105)
+X <- c()
+Y <- c()
 
 # Enter the absolute frequencies by rows
 print("Enter the frequencies:")
