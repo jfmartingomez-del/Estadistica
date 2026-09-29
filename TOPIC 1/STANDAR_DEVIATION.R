@@ -7,6 +7,9 @@ standard_deviation <- function(arr) {
 
 standard_deviation(arr)
 
+#VARIANCE
+var_population <- var(arr) * (length(arr) - 1) / length(arr)
+
 #QUASI VARIANCE
 var(arr)
 
