@@ -1,3 +1,14 @@
+# Enter the values x and y
+
+X <- c(155, 165, 175, 185, 195)
+Y <- c(55, 65, 75, 85, 95, 105)
+
+# Enter the absolute frequencies by rows
+print("Enter the frequencies:")
+
+ni <- matrix(c(),
+             nrow = length(X), byrow = TRUE)
+
 # Create the complete vectors X and Y
 arr_X <- rep(X, rowSums(ni))
 arr_Y <- rep(Y, colSums(ni))
