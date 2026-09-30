@@ -1,0 +1,24 @@
+#ONLY WHEN U HAVE X AND Y, NO WHEN YOU HAVE A TABLE WITH FREQS!!!
+
+# Enter the values of X
+print("Enter the values of X:")
+X <- scan()
+
+# Enter the values of Y
+print("Enter the values of Y:")
+Y <- scan()
+
+# Scatter plot
+plot(X, Y)
+
+# Regression of Y on X
+abline(lm(Y ~ X), col = "red")
+
+# Regression of X on Y
+lm2 <- lm(X ~ Y)
+
+a <- coef(lm2)[1]
+b <- coef(lm2)[2]
+
+# Draw X/Y regression on the same plot
+abline(a = -a/b, b = 1/b, col = "blue")
