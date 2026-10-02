@@ -1,0 +1,12 @@
+#---------------------------------CREATE THE TABLE------------------------------
+cat("Introduce the value of X:")
+xValues <- scan()
+cat("Introduce the value of Y:")
+yValues <- scan() 
+
+cat("Introduce rows of the table(frequencies):")
+tab <- matrix(scan(),nrow = length(xValues), byrow = TRUE)
+rownames(tab) <- xValues
+colnames(tab) <- yValues
+print(tab)
+#-------------------------------------------------------------------------------
