@@ -1,0 +1,39 @@
+#--------------------MEANS,VARIANCE AND COVARIANCE TABLE------------------------
+tableMoment <- function(table, xValues, yValues, r, s, a = 0, b = 0){
+  N <- sum(table)
+  answer <- 0
+  for(i in 1:nrow(table)){
+    for(j in 1:ncol(table)){
+      answer <- answer + table[i, j] * (xValues[i] - a)**r * (yValues[j] - b)**s
+    }
+  }
+  answer <- answer / N
+
+  return (answer)
+}
+
+tableMeanX <- function(table, xValues, yValues){
+  return (tableMoment(table, xValues, yValues, 1, 0))
+}
+
+tableMeanY <- function(table, xValues, yValues){
+  return (tableMoment(table, xValues, yValues, 0, 1))
+}
+
+tableVarianceX <- function(table, xValues, yValues){
+  m20 <- tableMoment(table, xValues, yValues, 2, 0)
+  return (m20 - tableMeanX(table, xValues, yValues)**2)
+}
+
+tableVarianceY <- function(table, xValues, yValues){
+  m02 <- tableMoment(table, xValues, yValues, 0, 2)
+  return (m02 - tableMeanY(table, xValues, yValues)**2)
+}
+
+tableCovariance <- function(table, xValues, yValues){
+  m11 <- tableMoment(table, xValues, yValues, 1, 1)
+  meanX <- tableMeanX(table, xValues, yValues)
+  meanY <- tableMeanY(table, xValues, yValues)
+  return (m11 - meanX * meanY)
+}
+#-------------------------------------------------------------------------------
