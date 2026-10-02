@@ -1,0 +1,11 @@
+#---------------------------------CREATE THE TABLE------------------------------
+cat("Introduce the values of X:\n")
+X <- scan()
+
+cat("Introduce the values of Y:\n")
+Y <- scan()
+
+tab <- table(X, Y)
+
+print(tab)
+#-------------------------------------------------------------------------------
