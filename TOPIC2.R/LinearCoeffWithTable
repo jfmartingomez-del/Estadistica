@@ -1,0 +1,15 @@
+#--------------------------CALCULATE LINEAR COEFFICIENT-------------------------
+tableCorrelation <- function(table, xValues, yValues){
+  
+  cov <- tableCovariance(table, xValues, yValues)
+  
+  varX <- tableVarianceX(table, xValues, yValues)  #Functions in another
+  varY <- tableVarianceY(table, xValues, yValues)  #    git file
+  
+  r <- cov / (sqrt(varX) * sqrt(varY))
+  
+  return(r)
+}
+r <- tableCorrelation(tab, xValues, yValues)
+cat("Correlation coefficient =", r, "\n")
+#-------------------------------------------------------------------------------
