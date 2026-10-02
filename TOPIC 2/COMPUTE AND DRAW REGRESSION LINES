@@ -1,0 +1,25 @@
+#----------------------COMPUTE AND DRAW REGRESSION LINES------------------------
+idx <- which(tab >0 ,arr.ind = TRUE)
+
+
+pointsOfX <- xValues[idx[,1]]
+pointsOfY <- yValues[idx[,2]]
+
+cov   <- tableCovariance(tab, xValues, yValues)
+
+b <- cov / varX
+a <- meanY - (b * meanX)
+
+
+bP <- cov / varY
+aP <- meanX - (bP * meanY)
+
+plot(pointsOfX, pointsOfY, xlab = "Height", ylab = "Weight", col = "green",pch=19)
+abline(a=a,b=b,col="red") #Y|X
+abline(a=-aP/bP ,b=1/bP,col="blue") #X|Y
+
+
+
+cat("Y/X: y =",a,"+",b,"x\n")
+cat("X/Y: x =",aP,"+",bP,"y\n")
+#-------------------------------------------------------------------------------
