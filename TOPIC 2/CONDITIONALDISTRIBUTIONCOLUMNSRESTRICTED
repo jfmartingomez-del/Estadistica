@@ -1,5 +1,4 @@
 #-----------CONDITIONAL DISTRIBUTION (COLUMNS RESTRICTED)-----------------------
-
 cat("Introduce the first column:\n")
 first_column <- scan()
 
@@ -21,5 +20,4 @@ print(conditional_abs)
 
 cat("Relative conditional frequencies:\n")
 print(conditional_rel)
-
 #-------------------------------------------------------------------------------
