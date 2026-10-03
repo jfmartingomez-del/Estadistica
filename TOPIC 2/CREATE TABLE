@@ -1,12 +1,16 @@
 #---------------------------------CREATE THE TABLE------------------------------
-cat("Introduce the value of X:")
+cat("Introduce the values of X:\n")
 xValues <- scan()
-cat("Introduce the value of Y:")
-yValues <- scan() 
 
-cat("Introduce rows of the table(frequencies):")
-tab <- matrix(scan(),nrow = length(xValues), byrow = TRUE)
+cat("Introduce the values of Y:\n")
+yValues <- scan()
+
+cat("Introduce rows of the table (frequencies):\n")
+tab <- matrix(scan(), nrow = length(xValues), byrow = TRUE)
+
 rownames(tab) <- xValues
 colnames(tab) <- yValues
-print(tab)
+
+# Show table with marginal frequencies
+print(addmargins(tab))
 #-------------------------------------------------------------------------------
