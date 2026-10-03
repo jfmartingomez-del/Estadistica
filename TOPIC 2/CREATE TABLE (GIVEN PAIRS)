@@ -7,5 +7,6 @@ Y <- scan()
 
 tab <- table(X, Y)
 
-print(tab)
+# Show table with marginal frequencies
+print(addmargins(tab))
 #-------------------------------------------------------------------------------
