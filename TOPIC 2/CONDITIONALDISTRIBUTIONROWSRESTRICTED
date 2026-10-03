@@ -1,0 +1,23 @@
+#-------------CONDITIONAL DISTRIBUTION(ROWS RESTRICTED)-------------------------
+cat("Introduce the first row:\n")
+first_row <- scan()
+
+cat("Introduce the last row:\n")
+last_row <- scan()
+
+# Select the rows
+conditional_data <- tab[first_row:last_row, ]
+
+# Add the frequencies by columns
+conditional_abs <- colSums(conditional_data)
+
+# Calculate relative frequencies
+conditional_rel <- conditional_abs / sum(conditional_abs)
+
+# Show results
+cat("Absolute conditional frequencies:\n")
+print(conditional_abs)
+
+cat("Relative conditional frequencies:\n")
+print(conditional_rel)
+#-------------------------------------------------------------------------------
