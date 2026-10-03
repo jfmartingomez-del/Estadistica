@@ -1,0 +1,17 @@
+#-----------------------------INDEPENDENCE--------------------------------------
+# Joint relative frequencies
+fi <- tab / sum(tab)
+
+# Marginal relative frequencies
+fx <- rowSums(fi)
+fy <- colSums(fi)
+
+# Frequencies expected if X and Y are independent
+independent_table <- outer(fx, fy)
+
+# Check independence
+print(isTRUE(all.equal(
+  as.numeric(fi),
+  as.numeric(independent_table)
+)))
+#-------------------------------------------------------------------------------
