@@ -1,11 +1,11 @@
 #---------------------------------CREATE THE TABLE------------------------------
 cat("Introduce the values of X:\n")
-X <- scan()
+xValues <- scan()
 
 cat("Introduce the values of Y:\n")
-Y <- scan()
+yValues <- scan()
 
-tab <- table(X, Y)
+tab <- table(xValues, yValues)
 
 # Show table with marginal frequencies
 print(addmargins(tab))
