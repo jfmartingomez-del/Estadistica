@@ -6,7 +6,7 @@ cat("Introduce the last column:\n")
 last_column <- scan()
 
 # Select the columns
-conditional_data <- tab[, first_column:last_column]
+conditional_data <- tab[, first_column:last_column]  #Si es solo una columna añadimos despues de la coma  ,drop = FALSE
 
 # Add the frequencies by rows
 conditional_abs <- rowSums(conditional_data)
