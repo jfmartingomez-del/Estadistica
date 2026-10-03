@@ -1,1 +1,6 @@
+conditional_mean <- sum(sort(unique(Y)) * conditional_rel)   #    MEAN OF Y WHEN X IS RESTRICTED
+cat("Conditional mean =", conditional_mean, "\n")            
 
+
+conditional_mean <- sum(sort(unique(X)) * conditional_rel)   #    MEAN OF X WHEN Y IS RESTRICTED
+cat("Conditional mean =", conditional_mean, "\n")
