@@ -1,4 +1,5 @@
-#--------------------MEANS,VARIANCE AND COVARIANCE TABLE------------------------
+#--------------------MOMENT ORDER,MEANS,VARIANCE AND COVARIANCE TABLE------------------------
+#OrdinaryMom(a=0,b=0),Respect a point(a=x,b=y), CentralMom(a= meanX, y = meanY)
 tableMoment <- function(table, xValues, yValues, r, s, a = 0, b = 0){
   N <- sum(table)
   answer <- 0
