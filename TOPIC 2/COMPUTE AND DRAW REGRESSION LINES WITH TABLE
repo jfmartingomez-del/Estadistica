@@ -1,4 +1,4 @@
-#----------------------COMPUTE AND DRAW REGRESSION LINES------------------------
+#----------------------COMPUTE AND DRAW REGRESSION LINES------------------------ xValues e yValues tienen que ser valores in repetir
 idx <- which(tab >0 ,arr.ind = TRUE)
 
 
