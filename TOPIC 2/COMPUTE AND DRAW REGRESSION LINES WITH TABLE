@@ -7,7 +7,11 @@ pointsOfY <- yValues[idx[,2]]
 
 cov   <- tableCovariance(tab, xValues, yValues)
 
+varX <- tableVarianceX(tab, xValues, yValues)
+varY <- tableVarianceY(tab, xValues, yValues)
 b <- cov / varX
+meanX <- tableMeanX(tab, xValues, yValues)
+meanY <- tableMeanY(tab, xValues, yValues)
 a <- meanY - (b * meanX)
 
 
