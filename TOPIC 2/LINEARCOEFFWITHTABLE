@@ -4,7 +4,7 @@ tableCorrelation <- function(table, xValues, yValues){ # Para que funcione, xVal
   cov <- tableCovariance(table, xValues, yValues)
   
   varX <- tableVarianceX(table, xValues, yValues)  #Functions in another
-  varY <- tableVarianceY(table, xValues, yValues)  #    git file
+  varY <- tableVarianceY(table, xValues, yValues)  #    git file (ALL IN MEANS,VARIANCE AND COV)
   
   r <- cov / (sqrt(varX) * sqrt(varY))
   
