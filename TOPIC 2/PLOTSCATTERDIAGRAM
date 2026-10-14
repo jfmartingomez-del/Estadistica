@@ -1,0 +1,6 @@
+#WE CAN SEE HERE IF THERE IS A GOOD CORRELATION
+
+plot(xValues, yValues,
+     main = "NAME OF THE DIAGRAM",
+     xlab = "X NAME",
+     ylab = "Y NAME",
