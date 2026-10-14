@@ -1,17 +1,17 @@
 #----------------------COMPUTE AND DRAW REGRESSION LINES------------------------ xValues e yValues tienen que ser valores in repetir
-idx <- which(tab >0 ,arr.ind = TRUE)
+idx <- which(table >0 ,arr.ind = TRUE)
 
 
 pointsOfX <- xValues[idx[,1]]
 pointsOfY <- yValues[idx[,2]]
 
-cov   <- tableCovariance(tab, xValues, yValues)
+cov   <- tableCovariance(table, xValues, yValues)
 
-varX <- tableVarianceX(tab, xValues, yValues)
-varY <- tableVarianceY(tab, xValues, yValues)
+varX <- tableVarianceX(table, xValues, yValues)
+varY <- tableVarianceY(table, xValues, yValues)
 b <- cov / varX
-meanX <- tableMeanX(tab, xValues, yValues)
-meanY <- tableMeanY(tab, xValues, yValues)
+meanX <- tableMeanX(table, xValues, yValues)
+meanY <- tableMeanY(table, xValues, yValues)
 a <- meanY - (b * meanX)
 
 
