@@ -18,7 +18,7 @@ a <- meanY - (b * meanX)
 bP <- cov / varY
 aP <- meanX - (bP * meanY)
 
-plot(pointsOfX, pointsOfY, xlab = "Height", ylab = "Weight", col = "green",pch=19)
+plot(pointsOfX, pointsOfY, xlab = "xname", ylab = "yname", col = "green",pch=19)
 abline(a=a,b=b,col="red") #Y|X
 abline(a=-aP/bP ,b=1/bP,col="blue") #X|Y
 
@@ -26,4 +26,11 @@ abline(a=-aP/bP ,b=1/bP,col="blue") #X|Y
 
 cat("Y/X: y =",a,"+",b,"x\n")
 cat("X/Y: x =",aP,"+",bP,"y\n")
+
+#PUNTO DE LA MEDIA DE xOG yOG:
+# Draw mean point
+points(mean(xOG), mean(yOG), col = "purple", pch = 19)
+
+# Print mean coordinates
+cat("Mean point:", mean(xOG), mean(yOG), "\n")
 #-------------------------------------------------------------------------------
