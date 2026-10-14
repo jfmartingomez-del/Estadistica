@@ -1,5 +1,5 @@
 #--------------------------CALCULATE LINEAR COEFFICIENT-------------------------
-tableCorrelation <- function(table, xValues, yValues){ # Para que funcione, xValues e yValues tienen que tener los valores sin repetir.
+tableCorrelation <- function(table, xValues, yValues){ # Para funcionar, xValues e yValues tienen que tener los valores sin repetir (sort(unique(xOG)) tb con "y").
   
   cov <- tableCovariance(table, xValues, yValues)
   
