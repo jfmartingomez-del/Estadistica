@@ -14,3 +14,5 @@ colnames(tab) <- yValues
 # Show table with marginal frequencies
 print(addmargins(tab))
 #-------------------------------------------------------------------------------
+#IF THERE ARE NOT FREQUENCIES:
+tab <- table(xValues,yValues)
