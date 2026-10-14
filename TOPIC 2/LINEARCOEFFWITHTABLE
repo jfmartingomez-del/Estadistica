@@ -10,6 +10,6 @@ tableCorrelation <- function(table, xValues, yValues){ # Para funcionar, xValues
   
   return(r)
 }
-r <- tableCorrelation(tab, xValues, yValues)
+r <- tableCorrelation(table, xValues, yValues)
 cat("Correlation coefficient =", r, "\n")
 #-------------------------------------------------------------------------------
