@@ -1,0 +1,36 @@
+#1st step is enter values
+xOG <- c()
+yOG <- c()
+
+#2nd step is changing variables and put them in the table
+ynew
+ynew
+tab <- table(xnew, ynew)
+
+xValues <- sort(unique(xnew))
+yValues <- sort(unique(ynew))
+
+cov <- tableCovariance(tab, xValues, yValues)
+varX <- tableVarianceX(tab, xValues, yValues)
+
+b <- cov / varX
+
+meanX <- tableMeanX(tab, xValues, yValues)
+meanY <- tableMeanY(tab, xValues, yValues)
+
+a <- meanY - b * meanX
+
+#step 3 is changing "a" and "b" if necessary
+newa
+newb
+
+#step 4 find R^2 and draw the function
+
+varY <- var(Y)* (length(Y)-1)/length(Y)
+R2 <- covXY^2/(varX * varY);R2
+
+# Draw logarithmic regression
+plot(xOG, yOG, xlab = "X", ylab = "Y", pch = 19)
+curve(#right member of the equation, add = TRUE, col = "red")
+
+cat("NAME OF FUNCTION: y = ....")
