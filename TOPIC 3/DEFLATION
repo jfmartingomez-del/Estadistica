@@ -1,7 +1,9 @@
-nominalValue <- ...
-CPIpercent <- ...
+#------------------------------------------------CALCULATE DEFLATION----------------------------------------
+nominalValue <- ... # Actual Value
+CPIpercent <- ... #Rise of Prices
 
 CPI <- CPIpercent / 100
 realValue <- nominalValue / CPI
 
 realValue
+#-----------------------------------------------------------------------------------------------------------
