@@ -1,0 +1,10 @@
+#-----------------------------------------CALCULATE E----------------------------------------
+# Unnormalized Seasonal Component
+MeanColumns <- colMeans (matrix (EA , ncol =k , byrow = T) ,
+na.rm= T )
+MeanColumns
+
+# Normalize the Seasonal Component
+E <- MeanColumns / mean (MeanColumns)
+E
+#---------------------------------------------------------------------------------------------
