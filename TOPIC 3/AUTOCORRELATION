@@ -1,0 +1,8 @@
+#----------------------------------CALCULATE AUTOCORRELATION FOR A FREQ N------------------------------
+autoCorrel <- function(xx, n) {
+  xx1 <- head(xx, -n)
+  xx2 <- tail(xx, -n)
+  sqrt(summary(lm(xx1 ~ xx2))$r.squared)
+}
+autoCorrel (xx , n) #Si se acerca mucho a 1 puede haber un ciclo
+#-----------------------------------------------------------------------------------------
