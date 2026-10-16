@@ -1,0 +1,1 @@
+trend <- stats::filter(xx, c(1,1,1)/3) ; trend
