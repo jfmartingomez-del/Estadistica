@@ -1,5 +1,3 @@
-x <- c(...)   # data
-
-series <- ts(x,
-             start = c(startYear, startPeriod),
+series <- ts(xx,
+             start = c(startYear, k),
              frequency = freq)
