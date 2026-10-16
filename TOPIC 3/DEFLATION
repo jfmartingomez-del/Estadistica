@@ -1,0 +1,7 @@
+nominalValue <- ...
+CPIpercent <- ...
+
+CPI <- CPIpercent / 100
+realValue <- nominalValue / CPI
+
+realValue
