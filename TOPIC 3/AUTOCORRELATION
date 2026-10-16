@@ -1,5 +1,4 @@
 #----------------------------------CALCULATE AUTOCORRELATION FOR A FREQ N------------------------------
-library ( tidyverse )
 xx <- c()
 autoCorrel <- function(xx, n) {
   xx1 <- head(xx, -n)
