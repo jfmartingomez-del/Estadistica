@@ -1,0 +1,18 @@
+#--------------------------- SIMPLE INDEX NUMBERS ---------------------------
+
+time <- c()       # years / periods
+values <- c()     # values of the variable
+
+basePosition <- n # position of the base period
+
+baseValue <- values[basePosition]
+
+# Simple indexes
+index <- values / baseValue
+
+# Percentage variation
+percentageChange <- (index - 1) * 100
+
+time
+index
+percentageChange
