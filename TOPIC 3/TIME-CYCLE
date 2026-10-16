@@ -1,0 +1,6 @@
+# Trend component , using a moving average of order 4
+trend <- stats :: filter ( series , c (.5 , 1 , 1 , 1 , .5) / 4)
+trend
+# Plot the series with the trend in red
+plot ( series )
+lines ( tend , col = 2)
