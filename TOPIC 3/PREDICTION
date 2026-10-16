@@ -1,0 +1,7 @@
+#--------------------------PREDICTION-----------------------------
+
+#T TABLE IS NECESSARY
+
+Prediction <- T * E
+Prediction
+
