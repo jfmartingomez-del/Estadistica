@@ -1,4 +1,5 @@
 #-------------------------------------------CREATE TIME SERIES--------------------------------------------------
+xx <- c()
 series <- ts(xx,
              start = c(startYear, startPeriod),  #startPeriod es de cuánto en cuánto avanzas en el tiempo
              frequency = k)
