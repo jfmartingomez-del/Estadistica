@@ -1,1 +1,7 @@
+# ##############################################
+# Multiplicative Decomposition
+# ##############################################
+# Seasonal (E) * Random Component (A) = X/TC :
+EA <- series / trend
+EA
 
