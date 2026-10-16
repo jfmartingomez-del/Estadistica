@@ -1,0 +1,7 @@
+-------------------------------------------------# Deseasonalized Series--------------------------------------------
+desestM <- series / E
+desestM
+
+# Graph of the Deseasonalized Series
+plot ( series )
+lines ( desestM , col =4)
