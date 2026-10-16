@@ -1,0 +1,5 @@
+x <- c(...)   # data
+
+series <- ts(x,
+             start = c(startYear, startPeriod),
+             frequency = freq)
