@@ -5,18 +5,18 @@ yOG <- c()
 #2nd step is changing variables and put them in the table
 ynew
 ynew
-tab <- table(xnew, ynew)
+table <- table(xnew, ynew)
 
 xValues <- sort(unique(xnew))
 yValues <- sort(unique(ynew))
 
-cov <- tableCovariance(tab, xValues, yValues)
-varX <- tableVarianceX(tab, xValues, yValues)
+cov <- tableCovariance(table, xValues, yValues)
+varX <- tableVarianceX(table, xValues, yValues)
 
 b <- cov / varX
 
-meanX <- tableMeanX(tab, xValues, yValues)
-meanY <- tableMeanY(tab, xValues, yValues)
+meanX <- tableMeanX(table, xValues, yValues)
+meanY <- tableMeanY(table, xValues, yValues)
 
 a <- meanY - b * meanX
 
