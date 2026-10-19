@@ -1,4 +1,6 @@
-#--------------------------------------CHECK IF TWO REGRESSION LINES ARE VALID  AND GIVE R^2-------------------------------------- // TIENEN QUE TENER Y DESPEJADA
+#---------------- CHECK IF TWO REGRESSION LINES ARE VALID AND GIVE R^2 ---------------- # TIENEN QUE ESTAR CON LA Y DESPEJADA
+# BOTH LINES MUST BE WRITTEN AS: y = a + bx
+
 checkRegressionLines <- function(a1, b1, a2, b2){
   
   # Slopes as they appear in y = a + bx
@@ -8,6 +10,14 @@ checkRegressionLines <- function(a1, b1, a2, b2){
   # They cannot be parallel different lines
   if(m1 == m2 && a1 != a2){
     cat("They cannot be regression lines\n")
+    return()
+  }
+  
+  # Special case: same line
+  if(m1 == m2 && a1 == a2){
+    cat("They can be regression lines\n")
+    cat("Both regression lines coincide\n")
+    cat("r^2 = 1\n")
     return()
   }
   
@@ -22,6 +32,8 @@ checkRegressionLines <- function(a1, b1, a2, b2){
     r2 <- test1
     
     cat("They can be regression lines\n")
+    cat("Line 1 is R_Y/X\n")
+    cat("Line 2 is R_X/Y\n")
     cat("r^2 =", r2, "\n")
     
   } else if(test2 >= 0 && test2 <= 1){
@@ -29,6 +41,8 @@ checkRegressionLines <- function(a1, b1, a2, b2){
     r2 <- test2
     
     cat("They can be regression lines\n")
+    cat("Line 2 is R_Y/X\n")
+    cat("Line 1 is R_X/Y\n")
     cat("r^2 =", r2, "\n")
     
   } else {
@@ -36,4 +50,5 @@ checkRegressionLines <- function(a1, b1, a2, b2){
     cat("They cannot be regression lines\n")
   }
 }
-#-------------------------------------------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------------
