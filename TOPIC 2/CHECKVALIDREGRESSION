@@ -1,0 +1,30 @@
+#--------------------------------------CHECK IF TWO REGRESSION LINES ARE VALID --------------------------------------
+checkRegressionLines <- function(a1, b1, a2, b2){
+
+  # Slopes as they appear in y = a + bx
+  m1 <- b1
+  m2 <- b2
+
+  # They cannot be parallel different lines
+  if(m1 == m2 && a1 != a2){
+    cat("They cannot be regression lines\n")
+    return()
+  }
+
+  # Try line 1 as Y/X and line 2 as X/Y
+  test1 <- m1 / m2
+
+  # Try line 2 as Y/X and line 1 as X/Y
+  test2 <- m2 / m1
+
+  if((test1 >= 0 && test1 <= 1) ||
+     (test2 >= 0 && test2 <= 1)){
+
+    cat("They can be regression lines\n")
+
+  } else {
+
+    cat("They cannot be regression lines\n")
+  }
+}
+#-------------------------------------------------------------------------------------------------------------------
