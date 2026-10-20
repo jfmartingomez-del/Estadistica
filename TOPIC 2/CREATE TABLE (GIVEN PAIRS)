@@ -5,8 +5,8 @@ xValues <- scan()
 cat("Introduce the values of Y:\n")
 yValues <- scan()
 
-tab <- table(xValues, yValues)
+table <- table(xValues, yValues)
 
 # Show table with marginal frequencies
-print(addmargins(tab))
+print(addmargins(table))
 #-------------------------------------------------------------------------------
