@@ -4,7 +4,7 @@ yOG <- c()
 
 #2nd step is changing variables and put them in the table
 ynew
-ynew
+xnew
 table <- table(xnew, ynew)
 
 xValues <- sort(unique(xnew))
