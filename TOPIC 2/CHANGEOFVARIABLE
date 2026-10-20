@@ -1,10 +1,40 @@
-#1st step is enter values
+#1st step: enter original values
 xOG <- c()
 yOG <- c()
 
-#2nd step is changing variables and put them in the table
-ynew
-xnew
+
+#2nd step: CHANGE VARIABLES depending on the model
+#
+# LINEAR:       y = a + bx
+#               xnew <- xOG
+#               ynew <- yOG
+#
+# EXPONENTIAL:  y = a * e^(b*x)
+#               xnew <- xOG
+#               ynew <- log(yOG)
+#               After regression: newa <- exp(a), newb <- b
+#
+# HYPERBOLIC:   y = 1 / (a + b*x)
+#               xnew <- xOG
+#               ynew <- 1 / yOG
+#               After regression: newa <- a, newb <- b
+#
+# POWER:        y = a * x^b
+#               xnew <- log(xOG)
+#               ynew <- log(yOG)
+#               After regression: newa <- exp(a), newb <- b
+#
+# QUADRATIC:    y = a*x^2 + b*x + c
+#               It is NOT done with this simple xnew/ynew regression code.
+#               It needs x^2 and x as explanatory variables.
+
+xnew <- 
+ynew <- 
+
+
+#3rd step: create the table and calculate the linear regression
+#           ynew = a + b*xnew
+
 table <- table(xnew, ynew)
 
 xValues <- sort(unique(xnew))
@@ -20,17 +50,54 @@ meanY <- tableMeanY(table, xValues, yValues)
 
 a <- meanY - b * meanX
 
-#step 3 is changing "a" and "b" if necessary
-newa
-newb
 
-#step 4 find R^2 and draw the function
+#4th step: RETURN TO THE ORIGINAL MODEL
+#
+# LINEAR:
+# newa <- a
+# newb <- b
+#
+# EXPONENTIAL:
+# newa <- exp(a)
+# newb <- b
+#
+# HYPERBOLIC:
+# newa <- a
+# newb <- b
+#
+# POWER:
+# newa <- exp(a)
+# newb <- b
 
-varY <- var(Y)* (length(Y)-1)/length(Y)
-R2 <- covXY^2/(varX * varY);R2
+newa <- 
+newb <- 
 
-# Draw logarithmic regression
-plot(xOG, yOG, xlab = "X", ylab = "Y", pch = 19)
-curve(#right member of the equation, add = TRUE, col = "red")
 
+#5th step: find R^2
+varY <- tableVarianceY(table, xValues, yValues)
+
+R2 <- cov^2 / (varX * varY)
+R2
+
+
+#6th step: draw the ORIGINAL function
+#
+# LINEAR:
+# curve(newa + newb*x, add=TRUE, col="red")
+#
+# EXPONENTIAL:
+# curve(newa * exp(newb*x), add=TRUE, col="red")
+#
+# HYPERBOLIC:
+# curve(1 / (newa + newb*x), add=TRUE, col="red")
+#
+# POWER:
+# curve(newa * x^newb, add=TRUE, col="red")
+
+plot(xOG, yOG, xlab="X", ylab="Y", pch=19)
+
+curve( , add=TRUE, col="red")
+
+
+#7th step: write the final equation
 cat("NAME OF FUNCTION: y = ....")
