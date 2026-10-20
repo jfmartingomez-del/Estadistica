@@ -1,15 +1,42 @@
 #----------------------------------------------- FIT A PLANE GIVEN X, Y, Z ------------------------------------------
-multipleRegression <- function(x, y, z){
+fitPlane <- function(x, y, z){
   
+  # Matrix of explanatory variables
   M <- cbind(1, x, y)
+  
+  # Values of Z
   Z <- z
   
+  # Coefficients of the plane
   A <- solve(t(M) %*% M) %*% t(M) %*% Z
   
   a <- A[1]
   b <- A[2]
   c <- A[3]
   
-  cat("z =", a, "+", b, "x +", c, "y\n")
+  # Estimated values
+  zEst <- M %*% A
+  
+  # Errors
+  errors <- Z - zEst
+  
+  # Sum of Squared Errors
+  SSE <- sum(errors^2)
+  
+  # Residual variance = MSE
+  residualVariance <- SSE / length(Z)
+  
+  # Variance of Z
+  varZ <- mean(Z^2) - mean(Z)^2
+  
+  # Coefficient of determination
+  R2 <- 1 - residualVariance / varZ
+  
+  cat("Plane:\n")
+  cat("z =", a, "+", b, "x +", c, "y\n\n")
+  
+  cat("SSE =", SSE, "\n")
+  cat("Residual variance =", residualVariance, "\n")
+  cat("R^2 =", R2, "\n")
 }
 #--------------------------------------------------------------------------------------------------------------------
