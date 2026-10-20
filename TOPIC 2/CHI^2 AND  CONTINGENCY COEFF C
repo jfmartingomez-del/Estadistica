@@ -1,0 +1,19 @@
+#-----------------------------------CHI SQUARE AND CONTINGENCY COEFF C------------------------------
+
+#CREATE 1ST THE TABLE
+# Total observations
+N <- sum(table)
+
+# Expected frequencies
+expected <- outer(rowSums(table), colSums(table)) / N
+
+# Chi-square coefficient
+chi2 <- sum((table - expected)^2 / expected)
+
+# Contingency coefficient
+C <- sqrt(chi2 / (chi2 + N))
+
+cat("Chi-square =", chi2, "\n")
+cat("Contingency coefficient =", C, "\n")
+
+----------------------------------------------------------------------------------------------------
