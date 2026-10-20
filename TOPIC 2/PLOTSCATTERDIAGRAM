@@ -3,4 +3,4 @@
 plot(xValues, yValues,
      main = "NAME OF THE DIAGRAM",
      xlab = "X NAME",
-     ylab = "Y NAME",
+     ylab = "Y NAME")
