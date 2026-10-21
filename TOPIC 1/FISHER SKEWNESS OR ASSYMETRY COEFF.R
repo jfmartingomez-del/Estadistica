@@ -1,4 +1,4 @@
-#The skewness or coefficient of asymmetry or Fisher´s.
+#-------------------------FISHER SKEWNESS OR COEFFICIENT OF ASSYMETRY------------------------- 
 mom_ord <- function(r, c, arr) {
   final_sum <- 0
   for (i in seq_along(arr)) {
@@ -13,4 +13,8 @@ standard_deviation <- function(arr) {
   return(std_dev)
 }
 
-Fisher_skewness <- mom_ord(3,mean(arr),arr)/(standard_deviation(arr))^3
+g1 <- mom_ord(3,mean(data),data)/(standard_deviation(data))^3 ; g1
+# g1 > 0  -> Positive skewness
+# g1 = 0  -> Symmetric distribution
+# g1 < 0  -> Negative skewness
+#---------------------------------------------------------------------------------------------
