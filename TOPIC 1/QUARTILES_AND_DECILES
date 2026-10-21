@@ -1,0 +1,12 @@
+#--------------------------QUARTILES AND DECILES----------------------
+#Quartiles
+Q1 <- quantile(data, 0.25, type = 1) ; Q1
+Q2 <- quantile(data, 0.50, type = 1) ; Q2
+Q3 <- quantile(data, 0.75, type = 1) ; Q3
+
+#InterQuartil Range
+IQR <- Q3 - Q1 ; IQR
+
+#Decil x (CAMBIAR X POR EL NUMERO QUE TE PIDAN)
+Dx <- quantile(data, x/100, type = 1) ; Dx
+#--------------------------------------------------------------------
