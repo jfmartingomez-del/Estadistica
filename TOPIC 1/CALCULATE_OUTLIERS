@@ -1,6 +1,10 @@
-#-------------------------------------CALCULATE OUTLIERS------------------------------------------
+#---------------------------CALCULATE OUTLIERS-------------------------
 lowerLimit <- Q1 - 1.5 * IQR
 upperLimit <- Q3 + 1.5 * IQR
 
-outliers <- data[data < lowerLimit | data > upperLimit] ; outliers
-#-------------------------------------------------------------------------------------------------
+lowerOutliers <- data[data < lowerLimit]
+upperOutliers <- data[data > upperLimit]
+
+cat("Lower outliers:", lowerOutliers, "\n")
+cat("Upper outliers:", upperOutliers, "\n")
+#----------------------------------------------------------------------
