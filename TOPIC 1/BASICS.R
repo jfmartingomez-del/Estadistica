@@ -6,12 +6,12 @@ ni <- c()
 data <- rep(xi,ni)
 
 #Quartiles
-q1 <- quantile(data, 0.25, type = 1) ; q1
-q2 <- quantile(data, 0.50, type = 1) ; q2
-q3 <- quantile(data, 0.75, type = 1) ; q3
+Q1 <- quantile(data, 0.25, type = 1) ; Q1
+Q2 <- quantile(data, 0.50, type = 1) ; Q2
+Q3 <- quantile(data, 0.75, type = 1) ; Q3
 
 #InterQuartil Range
-IQR <- q3 - q1 ; IQR
+IQR <- Q3 - Q1 ; IQR
 
 #Decil x
 Dx <- quantile(data, x/100, type = 1) ; Dx
