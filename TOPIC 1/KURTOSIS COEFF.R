@@ -1,4 +1,4 @@
-#Kurtosis or coefficient of peakedness.
+#-------------------------KURTOSIS OR COEFFICIENT OF PEAKEDNESS--------------------
 mom_ord <- function(r, c, arr) {
   final_sum <- 0
   for (i in seq_along(arr)) {
@@ -13,4 +13,8 @@ standard_deviation <- function(arr) {
   return(std_dev)
 }
 
-Kurtosis_coeff <- mom_ord(4,mean(arr),arr)/(standard_deviation(arr)^4) - 3
+g2 <- mom_ord(4,mean(data),data)/(standard_deviation(data)^4) - 3 ; g2
+# g2 > 0  -> Leptokurtic
+# g2 = 0  -> Mesokurtic
+# g2 < 0  -> Platykurtic
+#----------------------------------------------------------------------------------
