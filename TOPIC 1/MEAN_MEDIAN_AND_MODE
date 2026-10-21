@@ -1,0 +1,16 @@
+#------------------------------MEAN, MEDIAN AND MODE-----------------------
+#mean
+mean_value <- mean(data) ; mean_value
+
+#median
+median_value <- median(data) ; median_value
+
+#mode
+max_frequency <- max(ni)
+for(i in 1:length(ni)){
+  if(ni[i] == max_frequency){
+    mode_value <- xi[i]
+  }
+}
+print(mode_value)
+#---------------------------------------------------------------------------
