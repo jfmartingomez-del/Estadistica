@@ -2,7 +2,7 @@
 #------------------------------- Calculate a linear regression of the deseasonalized---------------------------------------
 # This puts a vector 1:n in xx , where n is the length of uk
 
-xx <- seq _ along (series)
+xx <- seq_along (series)
 # Linear regression
 model <- lm( desestM ~ xx )
 # Calculate the predicted values of the line
