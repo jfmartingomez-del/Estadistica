@@ -6,7 +6,7 @@ xx <- seq_along (series)
 # Linear regression
 model <- lm( desestM ~ xx )
 # Calculate the predicted values of the line
-regL <- ts( predict .lm( model ) , start =c(startYear , startPeriod) ,
+regL <- ts( predict.lm(model) , start =c(startYear , startPeriod) ,
 frequency =k)
 # Plot the deseasonalized series with the line
 plot (desestM)
