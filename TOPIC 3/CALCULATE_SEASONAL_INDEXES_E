@@ -1,4 +1,5 @@
-#-----------------------------------------CALCULATE E----------------------------------------
+#-----------------------------------------CALCULATE E---------------------------------------- # Para usar esto primero
+                                                                                              # hay que eliminar el Trend-Cycle
 # Unnormalized Seasonal Component
 MeanColumns <- colMeans (matrix (EA , ncol =k , byrow = T) ,
 na.rm= T )
