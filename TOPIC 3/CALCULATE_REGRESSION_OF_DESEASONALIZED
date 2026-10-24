@@ -1,14 +1,23 @@
+#------------------------------- Calculate a linear regression of the deseasonalized ---------------------------------------
+# This puts a vector 1:n in xx, where n is the length of series
+xx <- seq_along(series)
 
-#------------------------------- Calculate a linear regression of the deseasonalized---------------------------------------
-# This puts a vector 1:n in xx , where n is the length of uk
-
-xx <- seq_along (series)
 # Linear regression
-model <- lm( desestM ~ xx )
+model <- lm(desestM ~ xx)
+
+# Coefficients of the regression line
+a <- coef(model)[1]
+b <- coef(model)[2]
+
+# Print the equation
+cat("Trend equation: T =", a, "+", b, "* t\n")
+
 # Calculate the predicted values of the line
-regL <- ts( predict.lm(model) , start =c(startYear , startPeriod) ,
-frequency =k)
+regL <- ts(predict.lm(model),
+           start = c(startYear, startPeriod),
+           frequency = k)
+
 # Plot the deseasonalized series with the line
-plot (desestM)
-lines ( regL , col =2)
+plot(desestM)
+lines(regL, col = 2)
 #---------------------------------------------------------------------------------------------------------------------------
