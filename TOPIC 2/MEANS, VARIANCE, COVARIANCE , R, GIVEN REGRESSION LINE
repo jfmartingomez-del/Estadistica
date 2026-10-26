@@ -1,4 +1,5 @@
 #---------------------- MEAN, VARIANCE, COVARIANCE AND CORR COEFF WITH REGRESSION LINE ------------------
+#Check b of y/x, it will tell you the sign of covValue
 regressionInfo <- function(a1, b1, a2, b2, covValue) {
 
   # Lines must be written as:
