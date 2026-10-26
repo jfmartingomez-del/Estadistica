@@ -1,0 +1,45 @@
+#----------------------------------------------------COMPUTE NEW REGRESSION LINES---------------------------------------------------
+# N is given by the exercise (Number of elements)
+removePointsRegression <- function(N, meanX, meanY, varX, covXY, pointsToRemove) {
+  # Original sums
+  sumX <- N * meanX
+  sumY <- N * meanY
+  sumX2 <- N * (varX + meanX^2)
+  sumXY <- N * (covXY + meanX * meanY)
+
+  # Remove points
+  for(i in 1:nrow(pointsToRemove)) {
+
+    x <- pointsToRemove[i, 1]
+    y <- pointsToRemove[i, 2]
+
+    sumX <- sumX - x
+    sumY <- sumY - y
+
+    sumX2 <- sumX2 - x^2
+    sumXY <- sumXY - x*y
+  }
+
+  # New number of observations
+  newN <- N - nrow(pointsToRemove)
+
+  # New means
+  newMeanX <- sumX / newN
+  newMeanY <- sumY / newN
+
+  # New variance and covariance
+  newVarX <- sumX2 / newN - newMeanX^2
+  newCov <- sumXY / newN - newMeanX * newMeanY
+
+  # New regression line Y/X
+  b <- newCov / newVarX
+  a <- newMeanY - b * newMeanX
+
+  cat("New N =", newN, "\n")
+  cat("New mean X =", newMeanX, "\n")
+  cat("New mean Y =", newMeanY, "\n")
+  cat("New variance X =", newVarX, "\n")
+  cat("New covariance =", newCov, "\n")
+  cat("New regression line: y =", a, "+", b, "* x\n")
+}
+#-------------------------------------------------------------------------------------------------------------------------------------
