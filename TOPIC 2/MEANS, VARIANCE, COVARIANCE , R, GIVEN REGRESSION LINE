@@ -1,0 +1,46 @@
+#---------------------- MEAN, VARIANCE, COVARIANCE AND CORR COEFF WITH REGRESSION LINE ------------------
+regressionInfo <- function(a1, b1, a2, b2, covValue) {
+
+  # Lines must be written as:
+  # y = a1 + b1*x
+  # y = a2 + b2*x
+
+  test1 <- b1 / b2
+  test2 <- b2 / b1
+
+  if(test1 >= 0 && test1 <= 1){
+
+    # Line 1 is R_Y/X
+    bYX <- b1
+
+    # Line 2 is R_X/Y, but its slope as x = a + b*y is:
+    bXY <- 1 / b2
+
+  } else {
+
+    # Line 2 is R_Y/X
+    bYX <- b2
+
+    # Line 1 is R_X/Y
+    bXY <- 1 / b1
+  }
+
+  # Intersection = (meanX, meanY)
+  meanX <- (a2 - a1) / (b1 - b2)
+  meanY <- a1 + b1 * meanX
+
+  # Variances
+  varX <- covValue / bYX
+  varY <- covValue / bXY
+
+  # Correlation coefficient
+  r <- covValue / sqrt(varX * varY)
+
+  cat("Mean X =", meanX, "\n")
+  cat("Mean Y =", meanY, "\n")
+  cat("Covariance =", covValue, "\n")
+  cat("Variance X =", varX, "\n")
+  cat("Variance Y =", varY, "\n")
+  cat("Correlation r =", r, "\n")
+}
+#--------------------------------------------------------------------------------------------------------
