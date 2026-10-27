@@ -21,3 +21,30 @@ print(conditional_abs)
 cat("Relative conditional frequencies:\n")
 print(conditional_rel)
 #-------------------------------------------------------------------------------
+# Calculate conditional mean
+
+meanY <- sum(yValues * conditional_rel)
+
+
+# Calculate central moments
+
+m2 <- sum(conditional_rel * (yValues - meanY)^2)
+m3 <- sum(conditional_rel * (yValues - meanY)^3)
+m4 <- sum(conditional_rel * (yValues - meanY)^4)
+
+
+# Calculate Fisher's skewness
+
+g1 <- m3 / m2^(3/2)
+
+
+# Calculate Fisher's excess kurtosis
+
+g2 <- m4 / m2^2 - 3
+
+# Print results
+
+print(meanY)
+print(g1)
+print(g2)
+#--------------------------------------------------------------------------------
