@@ -14,6 +14,11 @@ yOG <- c()
 #               ynew <- log(yOG)
 #               After regression: newa <- exp(a), newb <- b
 #
+# EXPONENTIAL BASE B: y = a * b^x
+#               xnew <- xOG
+#               ynew <- log(yOG)
+#               After regression: newa <- exp(a), newb <- exp(b)
+#
 # HYPERBOLIC:   y = 1 / (a + b*x)
 #               xnew <- xOG
 #               ynew <- 1 / yOG
@@ -36,8 +41,8 @@ yOG <- c()
 #               a <- A[3]
 
 
-xnew <- 
-ynew <- 
+xnew <-
+ynew <-
 
 
 #3rd step: create the table and calculate the linear regression
@@ -84,6 +89,10 @@ a <- meanY - b * meanX
 # newa <- exp(a)
 # newb <- b
 #
+# EXPONENTIAL BASE B:
+# newa <- exp(a)
+# newb <- exp(b)
+#
 # HYPERBOLIC:
 # newa <- a
 # newb <- b
@@ -100,13 +109,14 @@ a <- meanY - b * meanX
 # y = a*x^2 + b*x + c
 
 
-newa <- 
-newb <- 
+newa <-
+newb <-
 
 
 #5th step: find R^2
 #
-# FOR LINEAR, EXPONENTIAL, HYPERBOLIC AND POWER:
+# FOR LINEAR, EXPONENTIAL, EXPONENTIAL BASE B,
+# HYPERBOLIC AND POWER:
 
 varY <- tableVarianceY(table, xValues, yValues)
 
@@ -136,6 +146,9 @@ R2
 # EXPONENTIAL:
 # curve(newa * exp(newb*x), add=TRUE, col="red")
 #
+# EXPONENTIAL BASE B:
+# curve(newa * newb^x, add=TRUE, col="red")
+#
 # HYPERBOLIC:
 # curve(1 / (newa + newb*x), add=TRUE, col="red")
 #
@@ -158,6 +171,9 @@ curve( , add=TRUE, col="red")
 #
 # EXPONENTIAL:
 # cat("EXPONENTIAL: y =", newa, "* e^(", newb, "*x)")
+#
+# EXPONENTIAL BASE B:
+# cat("EXPONENTIAL BASE B: y =", newa, "*", newb, "^x")
 #
 # HYPERBOLIC:
 # cat("HYPERBOLIC: y = 1 / (", newa, "+", newb, "*x)")
