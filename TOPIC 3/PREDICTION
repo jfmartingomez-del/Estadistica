@@ -1,0 +1,13 @@
+# Conseguimos la ecuacion del trend usando la regresion:
+# T = a + b*t
+
+# Sustituimos t por la posicion del periodo que queremos predecir.
+# Ejemplo: si la serie tiene 16 datos, el siguiente periodo sera t = 17.
+
+# Calculamos la tendencia futura:
+# Tfuture = a + b*t
+
+# Finalmente hacemos:
+# Prediction = Tfuture * E[columna]
+
+# La columna de E depende del trimestre/season que nos pidan.
