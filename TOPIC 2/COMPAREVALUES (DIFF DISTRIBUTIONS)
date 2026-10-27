@@ -1,0 +1,34 @@
+-----------------------------------------------COMPAREVALUES (DIFF DISTRIBUTIONS)------------------------------------------------
+# 1st step: Enter the data
+
+meanX <- 
+sdX <- 
+valueX <- 
+
+meanY <- 
+sdY <- 
+valueY <- 
+
+
+# 2nd step: Calculate standardized scores
+
+zX <- (valueX - meanX) / sdX
+zY <- (valueY - meanY) / sdY
+
+
+# 3rd step: Print results
+
+print(zX)
+print(zY)
+
+
+# 4th step: Compare results
+
+if (zX > zY) {
+  print("X is relatively better")
+} else if (zY > zX) {
+  print("Y is relatively better")
+} else {
+  print("Both are equally good")
+}
+-----------------------------------------------------------------------------------------------------------------------------------
