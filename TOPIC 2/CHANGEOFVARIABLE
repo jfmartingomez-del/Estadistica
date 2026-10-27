@@ -25,8 +25,16 @@ yOG <- c()
 #               After regression: newa <- exp(a), newb <- b
 #
 # QUADRATIC:    y = a*x^2 + b*x + c
-#               It is NOT done with this simple xnew/ynew regression code.
-#               It needs x^2 and x as explanatory variables.
+#               DO NOT use xnew/ynew.
+#               Use:
+#
+#               M <- cbind(1, xOG, xOG^2)
+#               A <- solve(t(M) %*% M) %*% t(M) %*% yOG
+#
+#               c <- A[1]
+#               b <- A[2]
+#               a <- A[3]
+
 
 xnew <- 
 ynew <- 
@@ -34,6 +42,8 @@ ynew <-
 
 #3rd step: create the table and calculate the linear regression
 #           ynew = a + b*xnew
+#
+# DO NOT USE THIS STEP FOR QUADRATIC
 
 table <- table(xnew, ynew)
 
@@ -49,6 +59,19 @@ meanX <- tableMeanX(table, xValues, yValues)
 meanY <- tableMeanY(table, xValues, yValues)
 
 a <- meanY - b * meanX
+
+
+#3rd step QUADRATIC:
+#
+# Use this instead of the previous step:
+#
+# M <- cbind(1, xOG, xOG^2)
+#
+# A <- solve(t(M) %*% M) %*% t(M) %*% yOG
+#
+# c <- A[1]
+# b <- A[2]
+# a <- A[3]
 
 
 #4th step: RETURN TO THE ORIGINAL MODEL
@@ -68,16 +91,41 @@ a <- meanY - b * meanX
 # POWER:
 # newa <- exp(a)
 # newb <- b
+#
+# QUADRATIC:
+# There is no change back.
+# a, b and c are already the coefficients
+# of the original model:
+#
+# y = a*x^2 + b*x + c
+
 
 newa <- 
 newb <- 
 
 
 #5th step: find R^2
+#
+# FOR LINEAR, EXPONENTIAL, HYPERBOLIC AND POWER:
+
 varY <- tableVarianceY(table, xValues, yValues)
 
 R2 <- cov^2 / (varX * varY)
 R2
+
+
+#5th step QUADRATIC:
+#
+# yEst <- M %*% A
+#
+# SSE <- sum((yOG - yEst)^2)
+#
+# residualVariance <- SSE / length(yOG)
+#
+# varY <- mean(yOG^2) - mean(yOG)^2
+#
+# R2 <- 1 - residualVariance / varY
+# R2
 
 
 #6th step: draw the ORIGINAL function
@@ -93,6 +141,10 @@ R2
 #
 # POWER:
 # curve(newa * x^newb, add=TRUE, col="red")
+#
+# QUADRATIC:
+# curve(a*x^2 + b*x + c, add=TRUE, col="red")
+
 
 plot(xOG, yOG, xlab="X", ylab="Y", pch=19)
 
@@ -100,4 +152,21 @@ curve( , add=TRUE, col="red")
 
 
 #7th step: write the final equation
+#
+# LINEAR:
+# cat("LINEAR: y =", newa, "+", newb, "*x")
+#
+# EXPONENTIAL:
+# cat("EXPONENTIAL: y =", newa, "* e^(", newb, "*x)")
+#
+# HYPERBOLIC:
+# cat("HYPERBOLIC: y = 1 / (", newa, "+", newb, "*x)")
+#
+# POWER:
+# cat("POWER: y =", newa, "* x^", newb)
+#
+# QUADRATIC:
+# cat("QUADRATIC: y =", a, "*x^2 +", b, "*x +", c)
+
+
 cat("NAME OF FUNCTION: y = ....")
