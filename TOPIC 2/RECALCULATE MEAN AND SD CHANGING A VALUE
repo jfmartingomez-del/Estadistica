@@ -1,0 +1,33 @@
+--------------------------------------------------------------RECALCULATE MEAN AND SD CHANGING A VALUE-----------------------------
+# 1st step: Enter original data
+
+n <- 
+meanOld <- 
+sdOld <- 
+
+oldValue <- 
+newValue <- 
+
+
+# 2nd step: Calculate new mean
+
+meanNew <- meanOld + (newValue - oldValue) / n
+
+
+# 3rd step: Calculate new variance
+
+varNew <- sdOld^2 +
+          (newValue^2 - oldValue^2) / n +
+          meanOld^2 - meanNew^2
+
+
+# 4th step: Calculate new standard deviation
+
+sdNew <- sqrt(varNew)
+
+
+# 5th step: Print results
+
+print(meanNew)
+print(sdNew)
+------------------------------------------------------------------------------------------------------------------------------------
