@@ -37,8 +37,11 @@ m4 <- sum(conditional_rel * (xValues - meanX)^4)
 
 g1 <- m3 / m2^(3/2)
 
-
 # Calculate Fisher's excess kurtosis
 
 g2 <- m4 / m2^2 - 3
+
+g_2<0 Platicúrtica
+g_2=0	Mesocúrtica
+g_2>0	Leptocúrtica
 #-----------------------------------------------------------------------------------
