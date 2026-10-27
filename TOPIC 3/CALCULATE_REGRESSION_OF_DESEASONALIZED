@@ -2,6 +2,8 @@
 # This puts a vector 1:n in xx, where n is the length of series
 xx <- seq_along(series)
 
+# Si solo hay un dato por año, hacemos destestM <- series
+
 # Linear regression
 model <- lm(desestM ~ xx)
 
