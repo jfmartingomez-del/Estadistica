@@ -6,13 +6,15 @@ cat("Introduce the values of Y:\n")
 yValues <- scan()
 
 cat("Introduce rows of the table (frequencies):\n")
-table <- matrix(scan(), nrow = length(xValues), byrow = TRUE)
+table <- matrix(scan(), nrow = length(xValues), byrow = TRUE) # Si te pone y en las filas, nrow = length(yValues)
 
-rownames(table) <- xValues
+rownames(table) <- xValues #Esto se intercambia si las y son las filas
 colnames(table) <- yValues
 
 # Show table with marginal frequencies
 print(addmargins(table))
+
+#Si las y son las filas y las x las columnas, trabajamos con la traspuesta table <- t(table)
 #-------------------------------------------------------------------------------
 #IF THERE ARE NOT FREQUENCIES:
 table <- table(xValues,yValues)
