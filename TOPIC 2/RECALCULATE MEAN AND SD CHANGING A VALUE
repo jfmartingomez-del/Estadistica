@@ -1,7 +1,7 @@
 --------------------------------------------------------------RECALCULATE MEAN AND SD CHANGING A VALUE-----------------------------
 # 1st step: Enter original data
 
-n <- 
+n <- # All the values
 meanOld <- 
 sdOld <- 
 
