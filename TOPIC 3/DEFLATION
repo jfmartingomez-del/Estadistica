@@ -2,7 +2,7 @@
 nominalValue <- ... # Actual Value
 CPIpercent <- ... #Rise of Prices
 
-CPI <- CPIpercent / 100
+CPI <- CPIpercent / 100  #Si tenemos el CPIpercent con el año viejo respecto al nuevo hay que hacer CPI <- 1/(CPIpercent / 100)
 realValue <- nominalValue / CPI
 
 realValue
