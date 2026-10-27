@@ -1,7 +1,7 @@
 #-------------------------------------------CREATE TIME SERIES--------------------------------------------------
 xx <- c()
 series <- ts(xx,
-             start = c(startYear, startPeriod),  #startPeriod es de cuánto en cuánto avanzas en el tiempo
+             start = c(startYear, startPeriod),  #startPeriod ES EN QUE TRIMESTRE EMPIEZA LA SERIE
              frequency = k)
 plot(series)
 #---------------------------------------------------------------------------------------------------------------
