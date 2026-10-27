@@ -37,4 +37,7 @@ tableCovariance <- function(table, xValues, yValues){
   meanY <- tableMeanY(table, xValues, yValues)
   return (m11 - meanX * meanY)
 }
+
+#PEARSON VARIACE COEFF (varY/X && meanY/X)
+CV <- sqrt(var) / mean; CV
 #-------------------------------------------------------------------------------
