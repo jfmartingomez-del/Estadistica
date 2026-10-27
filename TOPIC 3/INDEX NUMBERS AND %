@@ -1,4 +1,4 @@
-#--------------------------- SIMPLE INDEX NUMBERS ---------------------------
+#----------------------------- COMPARE VALUES WITH A BASE PERIOD -----------------------------
 
 time <- c()       # years / periods
 values <- c()     # values of the variable
